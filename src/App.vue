@@ -1,8 +1,8 @@
 <script setup>
   import Header from './components/Header.vue'
-  
-  const title = "Rps Game";
+  import Home from './components/Home.vue'
 </script>
 <template>
-  <Header :title="title" />
+  <Header />
+  <Home />
 </template>
