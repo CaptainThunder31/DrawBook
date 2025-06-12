@@ -40,8 +40,8 @@
     color: #fff;
     font-size: 1.5rem;
     background: linear-gradient( -45deg, black 0%, black 30%,red 30%, red 70%,black 70%, black 100% );
+    transition: background 1s;
   }
-
   .start {
     width: 250px;
     height: 70px;

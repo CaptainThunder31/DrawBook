@@ -1,14 +1,16 @@
 <script setup>
   import {
+    ref
+  } from 'vue';
+  import {
     Icon
   } from '@iconify/vue';
-
-  const title = 'RPS Game';
-
+  const emit = defineEmits(['clicked']);
+  const title = 'RPS Arena';
 </script>
 <template>
   <div>
-    <Icon icon="material-symbols:menu-rounded" width="50" height="50" class="nav" />
+    <Icon icon="material-symbols:menu-rounded" width="50" height="50" class="nav" @click="emit('clicked')" />
     <h1>{{title}}</h1>
   </div>
 </template>
@@ -23,6 +25,7 @@
     align-items: center;
     justify-content: center;
     padding-left: 50px;
+    z-index: 1000;
   }
 
   .nav {
