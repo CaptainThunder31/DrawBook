@@ -1,27 +1,30 @@
 <script setup>
-  import {
-    Icon
-  } from '@iconify/vue';
-  const list = [{
-    name: "Stats",
-    icon: "octicon:graph-16"
-  }, {
-    name: "Profile",
-    icon: 'iconamoon:profile-bold'
-  }]
+import { Icon } from '@iconify/vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const list = [
+  { name: "Stats", icon: "octicon:graph-16" },
+  { name: "Profile", icon: 'iconamoon:profile-bold' }
+]
+
+function goGame() {
+  router.push({ name: 'Game' }) // Changed to match the route name
+}
 </script>
+
 <template>
-  <div>
-    <button v-for="(item, index) in list" key="index">
-      <h2>{{item.name}}</h2>
+  <div class="home-container">
+    <button v-for="(item, index) in list" :key="index">
+      <h2>{{ item.name }}</h2>
       <Icon :icon="item.icon" width="50" height="50" />
     </button>
-
+    <button class="start" @click="goGame">Start Game</button>
   </div>
-  <button class="start">Start Game</button>
 </template>
+
 <style scoped>
-  div {
+div {
     margin-top: 50px;
     width: 100vw;
     height: 80vh;
@@ -52,3 +55,4 @@
     left: calc(50% - 125px);
   }
 </style>
+
