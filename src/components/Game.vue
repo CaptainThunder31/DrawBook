@@ -1,6 +1,5 @@
 <script setup>
 import { useRouter } from 'vue-router'
-
 const router = useRouter()
 
 function goBackHome() {
@@ -21,13 +20,12 @@ function goBackHome() {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #faa000;
+  background: #111;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  cursor: pointer;
+  z-index: 100;
 }
 .game-screen * {
   pointer-events: none;

@@ -6,18 +6,18 @@
     Icon
   } from '@iconify/vue';
   const emit = defineEmits(['clicked']);
-  const title = 'RPS Arena';
+  const props = defineProps({'title': String});
 </script>
 <template>
   <div>
     <Icon icon="material-symbols:menu-rounded" width="50" height="50" class="nav" @click="emit('clicked')" />
-    <h1>{{title}}</h1>
+    <p>{{title}}</p>
   </div>
 </template>
 <style scoped>
   div {
     width: 100vw;
-    height: 70px;
+    height: 60px;
     position: fixed;
     background: #f00;
     color: #fff;
@@ -26,6 +26,7 @@
     justify-content: center;
     padding-left: 50px;
     z-index: 1000;
+    font-size: 30px;
   }
 
   .nav {

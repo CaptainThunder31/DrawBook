@@ -7,13 +7,18 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    meta: { transition: 'slide-right' } 
+    meta: { transition: 'fade',
+    title: 'RPS Arena'
+      
+    } 
   },
   {
     path: '/game',
     name: 'Game', 
     component: Game,
-    meta: { transition: 'slide-left' }
+    meta: { transition: 'slide-left',
+      title: 'Start Game'
+    }
   }
 ]
 

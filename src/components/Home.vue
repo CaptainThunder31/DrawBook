@@ -16,8 +16,9 @@ function goGame() {
 <template>
   <div class="home-container">
     <button v-for="(item, index) in list" :key="index">
-      <h2>{{ item.name }}</h2>
+
       <Icon :icon="item.icon" width="50" height="50" />
+            <h3>{{ item.name }}</h3>
     </button>
     <button class="start" @click="goGame">Start Game</button>
   </div>
@@ -25,18 +26,18 @@ function goGame() {
 
 <style scoped>
 div {
-    margin-top: 50px;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     position: absolute;
+    gap: 50px;
   }
   button {
-    width: 300px;
-    height: 200px;
+    width: 250px;
+    height: 150px;
     background: #111;
     border: 10px solid #f00;
     border-radius: 20px;
@@ -44,6 +45,9 @@ div {
     font-size: 1.5rem;
     background: linear-gradient( -45deg, black 0%, black 30%,red 30%, red 70%,black 70%, black 100% );
     transition: background 1s;
+    display:flex;
+    align-items:center;
+    justify-content: space-evenly;
   }
   .start {
     width: 250px;
@@ -51,7 +55,7 @@ div {
     border-radius: 10px;
     background: #f00;
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: calc(50% - 125px);
   }
 </style>
