@@ -9,7 +9,7 @@ const list = [
 ]
 
 function goGame() {
-  router.push({ name: 'Game' }) // Changed to match the route name
+  router.replace({ name: 'Game' });
 }
 </script>
 

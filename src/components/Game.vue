@@ -4,7 +4,6 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 function goBackHome() {
-  // Use replace to avoid adding to history
   router.replace({ name: 'Home' })
 }
 </script>
@@ -17,7 +16,7 @@ function goBackHome() {
 
 <style scoped>
 .game-screen {
-  position: fixed; /* Keep fixed positioning */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -28,10 +27,8 @@ function goBackHome() {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  cursor: pointer; /* Add pointer cursor to indicate clickable */
+  cursor: pointer;
 }
-
-/* Ensure no children elements are blocking clicks */
 .game-screen * {
   pointer-events: none;
 }
