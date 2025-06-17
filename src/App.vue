@@ -1,30 +1,30 @@
 <script setup>
-  //app.vue
-  import {ref, computed} from 'vue';
-  import {useRoute} from 'vue-router'
-  import Header from './components/Header.vue'
-  import Home from './components/Home.vue'
-  import Drawer from './components/Drawer.vue'
-  const route = useRoute();
-  const toggled = ref(false);
-  function handleClick() {
-    toggled.value = !toggled.value;
-  }
+import {ref, computed} from 'vue';
+import {useRoute} from 'vue-router'
+import Header from './components/Header.vue'
+import Drawer from './components/Drawer.vue'
+
+const route = useRoute();
+const toggled = ref(false);
+
+function handleClick() {
+  toggled.value = !toggled.value;
+}
   
-  const title = computed(()=>
-  route.meta.title || 'RPS Arena'
-  )
+const title = computed(() => route.meta.title || 'RPS Arena')
 </script>
+
 <template>
-    <Header :title="title" @clicked="handleClick" />
+  <Header :title="title" @clicked="handleClick" />
   <router-view v-slot="{ Component, route }">
     <transition :name="route.meta.transition || 'fade'" mode="out-in">
       <component :is="Component" :key="route.path" />
     </transition>
   </router-view>
-    <Drawer :toggled="toggled" @clicked="handleClick" />
+  <Drawer :toggled="toggled" @clicked="handleClick" />
 </template>
 
+<!-- Your styles remain the same -->
 <style>
 /* Slide transitions */
 .slide-left-enter-active,

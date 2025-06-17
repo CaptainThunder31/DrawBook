@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { routeSet } from './routeSet.js'
-import Home from '../components/Home.vue'
-import Game from '../components/Game.vue'
+import HomePage from '../pages/HomePage.vue'  // Changed from Home.vue
+import GamePage from '../pages/GamePage.vue'  // Changed from Game.vue
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: HomePage,  // Now using HomePage
     meta: {
       transition: 'fade',
       title: 'RPS Arena',
@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/game',
     name: 'Game',
-    component: Game,
+    component: GamePage,  // Now using GamePage
     meta: {
       transition: 'slide-left',
       title: 'Start Game'
@@ -25,6 +25,7 @@ const routes = [
   }
 ]
 
+// Rest of your router configuration remains the same
 const router = createRouter({
   history: createWebHistory(),
   routes,
