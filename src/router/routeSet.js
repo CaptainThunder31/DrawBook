@@ -41,8 +41,8 @@ class RouteSet {
 
   handleBackButton(router) {
     if (this.routeHistory.value.length <= 1) {
-      if (router.currentRoute.value.name !== 'Home') {
-        router.push('/');
+      if (router.currentRoute.value.name !== 'Auth') {
+        router.push('/auth');
       }
       return false;
     }

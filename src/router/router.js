@@ -1,31 +1,38 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { routeSet } from './routeSet.js'
-import HomePage from '../pages/HomePage.vue'  // Changed from Home.vue
-import GamePage from '../pages/GamePage.vue'  // Changed from Game.vue
+import HomePage from '../pages/HomePage.vue'
+import GamePage from '../pages/GamePage.vue'
 
 const routes = [
   {
     path: '/',
+    redirect: '/home'
+  },
+  { 
+    path: '/home',
     name: 'Home',
-    component: HomePage,  // Now using HomePage
+    component: HomePage,
     meta: {
       transition: 'fade',
       title: 'RPS Arena',
-      historyClean: true
+      historyClean: true,
+      showHeader: true,
+      showDrawer: true
     }
   },
   {
     path: '/game',
     name: 'Game',
-    component: GamePage,  // Now using GamePage
+    component: GamePage,
     meta: {
       transition: 'slide-left',
-      title: 'Start Game'
+      title: 'Start Game',
+      showHeader: false,
+      showDrawer: false
     }
   }
 ]
 
-// Rest of your router configuration remains the same
 const router = createRouter({
   history: createWebHistory(),
   routes,
@@ -38,7 +45,6 @@ router.beforeEach((to, from, next) => {
     routeSet.add(to.name);
   }
 
-  // Set document title
   if (to.meta.title) {
     document.title = to.meta.title;
   }
